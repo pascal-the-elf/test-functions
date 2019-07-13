@@ -18,6 +18,7 @@
     <style>
         input {
             width: 100%;
+            padding: 10%;
         }
     </style>
     <input placeholder="API KEY" />
@@ -27,13 +28,16 @@
     <input placeholder="BUCKET" />
     <input placeholder="SENDER ID" />
     <input placeholder="APP ID" />
-    <input type="checkbox" />
-    <input type="checkbox" />
-    <input type="checkbox" />
-    <button>GENERATE CODE</button>
+    <label>Auth: </label><input type="checkbox" />
+    <label>Firestore: </label><input type="checkbox" />
+    <label>Storage: </label><input type="checkbox" />
+    <button onclick="gen()">GENERATE CODE</button><br>
     <textarea></textarea>
     <script>
-        function 
+        function gen() {
+            var i = document.getElementsByTagName("input");
+            document.getElementsByTagName("textarea")[0].value = '<script src="https://pascal-the-elf.github.io/test-functions/SFRK.js?key='+i[0].value+'&domain='+i[1].value+'&db='+i[2].value+'&pid='+i[3].value+'&bucket='+i[4].value+'&sender='+i[5].value+'&app='+i[6].value+'&auth='+i[7].value+'&firestore='+i[8].value+'&storage='+i[9].value+'" class="SFRK"></script>';
+        }
     </script>
 </body>
 </html>
