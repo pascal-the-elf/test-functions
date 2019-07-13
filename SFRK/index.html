@@ -16,7 +16,7 @@
     
     <h2>Tool</h2>
     <style>
-        input {
+        input, label, select, button, textarea {
             width: 100%;
             margin: 16px;
         }
@@ -28,15 +28,28 @@
     <input placeholder="BUCKET" />
     <input placeholder="SENDER ID" />
     <input placeholder="APP ID" />
-    <label>Auth: </label><input type="checkbox" />
-    <label>Firestore: </label><input type="checkbox" />
-    <label>Storage: </label><input type="checkbox" />
+    <label>Auth: </label>
+    <select>
+        <option value="1">YES</option>
+        <option value="0">NO</option>
+    </select>
+    <label>Firestore: </label>
+    <select>
+        <option value="1">YES</option>
+        <option value="0">NO</option>
+    </select>
+    <label>Storage: </label>
+    <select>
+        <option value="1">YES</option>
+        <option value="0">NO</option>
+    </select>
     <button onclick="gen()">GENERATE CODE</button><br>
     <textarea></textarea>
     <script>
         function gen() {
+            var s = document.getElementsByTagName("select");
             var i = document.getElementsByTagName("input");
-            document.getElementsByTagName("textarea")[0].value = '<scri'+'pt src="https://pascal-the-elf.github.io/test-functions/SFRK.js?key='+i[0].value+'&domain='+i[1].value+'&db='+i[2].value+'&pid='+i[3].value+'&bucket='+i[4].value+'&sender='+i[5].value+'&app='+i[6].value+'&auth='+i[7].value+'&firestore='+i[8].value+'&storage='+i[9].value+'" class="SFRK"></sc'+'ript>';
+            document.getElementsByTagName("textarea")[0].value = '<scri'+'pt src="https://pascal-the-elf.github.io/test-functions/SFRK.js?key='+i[0].value+'&domain='+i[1].value+'&db='+i[2].value+'&pid='+i[3].value+'&bucket='+i[4].value+'&sender='+i[5].value+'&app='+i[6].value+'&auth='+s[0].value+'&firestore='+s[1].value+'&storage='+s[2].value+'" class="SFRK"></sc'+'ript>';
         }
     </script>
 </body>
