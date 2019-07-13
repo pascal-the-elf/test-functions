@@ -1,5 +1,6 @@
 // Firebase Informations
 var fireLoaded = {};
+const firebaseAllLoaded = new Event("firebaseAllLoaded");
 
 var SFRKUD = {};
 let u = document.getElementsByClassName("SFRK")[0].src;
@@ -94,5 +95,6 @@ function firebaseLoaded() {
         };
         firebase.initializeApp(firebaseConfig);
         console.log("Firebase Initialized.");
+        document.dispatchEvent(firebaseAllLoaded);
     }
 }
