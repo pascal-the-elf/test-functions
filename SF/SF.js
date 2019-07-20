@@ -101,10 +101,14 @@ function firebaseLoaded() {
 // below functions untested
 
 document.addEventListener("firebaseAllLoaded", () => {
-    firebase.login = function(a, b="pw") {
-        if(b == "pw") {
-            return firebase.auth().signInWithEmailAndPassword(a.email, a.password);
+    firebase.user = {
+        login: function(a, b="pw") {
+            if(b == "pw") {
+                return firebase.auth().signInWithEmailAndPassword(a.email, a.password);
+            }
+        },
+        create: function(a) {
+            return firebase.auth().createUserWithEmailAndPassword(a.email, a.password);
         }
     };
 });
-firebase.login({email: "email@email.com", password: "password"});
