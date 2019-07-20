@@ -101,6 +101,7 @@ function firebaseLoaded() {
 // below functions untested
 
 document.addEventListener("firebaseAllLoaded", () => {
+    db = firebase.firestore();
     firebase.user = {
         login: function(a, b="pw") {
             if(b == "pw") {
